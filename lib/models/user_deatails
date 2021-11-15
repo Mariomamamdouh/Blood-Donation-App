@@ -1,0 +1,47 @@
+class UserDetails {
+
+  String name;
+  String emailId;
+  String imageurl;
+  String uid;
+
+  UserDetails({this.name, this.emailId, this.imageurl, this.uid});
+
+  Map toMap(UserDetails userDetails) {
+    var data = Map<String, String>();
+    data['name'] = userDetails.name;
+    data['emailId'] = userDetails.emailId;
+    data['imageurl'] = userDetails.imageurl;
+    data['uid'] = userDetails.uid;
+    return data;
+  }
+
+  UserDetails.fromMap(Map<String, String> mapData) {
+    this.name = mapData['name'];
+    this.emailId = mapData['emailId'];
+    this.imageurl = mapData['imageurl'];
+    this.uid = mapData['uid'];
+  }
+
+  String get _name => name;
+  String get _emailId => emailId;
+  String get _imageurl => imageurl;
+  String get _uid => uid;
+
+  set _imageurl(String imageurl) {
+    this.imageurl = imageurl;
+  }
+
+  set _name(String name) {
+    this.name = name;
+  }
+
+  set _emailId(String emailId) {
+    this.emailId = emailId;
+  }
+
+  set _uid(String uid) {
+    this.uid = uid;
+  }
+
+}
